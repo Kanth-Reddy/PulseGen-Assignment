@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+}
+
+.auth-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+/* Left side with image */
+.auth-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-frame {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 0 30px rgba(0, 183, 255, 0.7),
+    inset 0 0 30px rgba(0, 183, 255, 0.3);
+  border: 3px solid #00b7ff;
+  animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 
+      0 0 20px rgba(0, 183, 255, 0.5),
+      inset 0 0 20px rgba(0, 183, 255, 0.2);
+  }
+  100% {
+    box-shadow: 
+      0 0 40px rgba(0, 183, 255, 0.8),
+      inset 0 0 40px rgba(0, 183, 255, 0.4);
+  }
+}
+
+.auth-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.neon-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 183, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: shimmer 6s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.neon-text {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-shadow: 
+    0 0 10px #00b7ff,
+    0 0 20px #00b7ff,
+    0 0 30px #00b7ff;
+}
+
+.neon-text h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #00f3ff;
+  letter-spacing: 5px;
+}
+
+.neon-text p {
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 3px;
+}
+
+/* Right side with forms */
+.auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-wrapper {
+  background: rgba(10, 15, 30, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  border: 2px solid #00b7ff;
+  box-shadow: 
+    0 0 30px rgba(0, 183, 255, 0.5),
+    inset 0 0 20px rgba(0, 183, 255, 0.1);
+}
+
+.neon-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #00f3ff;
+  text-shadow: 
+    0 0 10px #00b7ff,
+    0 0 20px #00b7ff;
+  letter-spacing: 3px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.neon-input {
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00b7ff;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.neon-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.neon-input:focus {
+  box-shadow: 0 0 20px rgba(0, 183, 255, 0.7);
+  border-color: #00f3ff;
+}
+
+.input-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
+}
+
+.neon-input:focus + .input-glow {
+  opacity: 1;
+}
+
+.neon-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.neon-button:hover::before {
+  left: 100%;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #00b7ff 0%, #0088cc 100%);
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 183, 255, 0.5);
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #00d0ff 0%, #00a8ff 100%);
+  box-shadow: 0 0 30px rgba(0, 183, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #ff0080 0%, #cc0066 100%);
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+}
+
+.register-btn:hover {
+  background: linear-gradient(135deg, #ff3399 0%, #ff0066 100%);
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.8);
+  transform: translateY(-2px);
+}
+
+.message {
+  text-align: center;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.success {
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.error {
+  color: #ff3366;
+  text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+}
+
+.switch-text {
+  text-align: center;
+  margin-top: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.switch-link {
+  background: none;
+  border: none;
+  color: #00b7ff;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 183, 255, 0.5);
+}
+
+.switch-link:hover {
+  color: #00f3ff;
+  text-shadow: 0 0 10px rgba(0, 183, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .auth-container {
+    flex-direction: column;
+  }
+  
+  .auth-left, .auth-right {
+    flex: none;
+    height: 50vh;
+  }
+  
+  .neon-frame {
+    max-width: 90%;
+  }
+  
+  .auth-image {
+    height: 300px;
+  }
+  
+  .neon-text h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-left, .auth-right {
+    padding: 20px;
+  }
+  
+  .form-wrapper {
+    padding: 30px 20px;
+  }
+  
+  .neon-title {
+    font-size: 2rem;
+  }
+  
+  .neon-text h1 {
+    font-size: 2.5rem;
+  }
+}

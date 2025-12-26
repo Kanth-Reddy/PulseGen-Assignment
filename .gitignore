@@ -1,0 +1,25 @@
+# Temporary files
+temp_frames/
+*.jpg
+*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# YOLO models (will be downloaded automatically)
+yolo_service/*.pt
+yolo_service/runs/
+
+# Node
+node_modules/
+.env
+*.log
+

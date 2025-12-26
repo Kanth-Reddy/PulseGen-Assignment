@@ -18,6 +18,17 @@ ENV/
 yolo_service/*.pt
 yolo_service/runs/
 
+# Service account credentials (Google Cloud, etc.)
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!eslint.config.js
+!vite.config.js
+server-side/*.json
+!server-side/package.json
+!server-side/package-lock.json
+
 # Node
 node_modules/
 .env

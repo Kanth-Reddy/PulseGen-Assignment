@@ -4,8 +4,6 @@
 
 The system uses Cloudinary for video storage. Credentials are already configured in `config/cloudinary.js`:
 
-- **API Key**: 313146379662928
-- **API Secret**: zkw_vaGdb4VOdWD8DmOz0IeMS9A
 
 To use your own Cloudinary account, update `server-side/.env`:
 ```
